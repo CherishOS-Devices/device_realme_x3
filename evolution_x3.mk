@@ -21,18 +21,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/realme/x3/device.mk)
 
-# Inherit common Blaze configurations
-$(call inherit-product, vendor/blaze/config/common_full_phone.mk)
-BLAZE_MAINTAINER := AK
-
-# Bootanimation Resolution
+# Inherit common Evolution X stuff.
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
-
-# Gapps
-WITH_GMS := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Device identifier
-PRODUCT_NAME := blaze_x3
+PRODUCT_NAME := evolution_x3
 PRODUCT_DEVICE := x3
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme X3 / SuperZoom
