@@ -21,13 +21,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/realme/x3/device.mk)
 
-# Inherit common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit common CherishOS stuff.
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+
+
+# CherishOS Stuff with GApps
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_BUILD_GRAPHENEOS_CAMERA := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_ENABLE_BLUR := true
+WITH_GMS := true
 
 # Device identifier
-PRODUCT_NAME := evolution_x3
+PRODUCT_NAME := cherish_x3
 PRODUCT_DEVICE := x3
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme X3 / SuperZoom
@@ -40,3 +48,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=RMX2081 \
     PRODUCT_NAME=RMX2081 \
     PRIVATE_BUILD_DESC="qssi-user 12 SKQ1.211113.001 1658765450117 release-keys"
+
+CHERISH_BUILD_TYPE := OFFICIAL
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=Perses
