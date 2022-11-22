@@ -9,7 +9,12 @@
     </privapp-permissions>
 
     <privapp-permissions package="com.android.systemui">
-        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+	    <permission name="android.permission.WRITE_APN_SETTINGS"/>
+	    <permission name="lineageos.permission.MANAGE_LIVEDISPLAY"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.settings">
+	    <permission name="lineageos.permission.MANAGE_LIVEDISPLAY"/>
     </privapp-permissions>
 
 </permissions>
